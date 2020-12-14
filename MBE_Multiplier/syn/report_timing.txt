@@ -1,0 +1,108 @@
+Information: Updating design information... (UID-85)
+Warning: There are infeasible paths detected in your design that were ignored during optimization. Please run 'report_timing -attributes' and/or 'create_qor_snapshot/query_qor_snapshot -infeasible_paths' to identify these paths.  (OPT-1721)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : FPmul
+Version: O-2018.06-SP4
+Date   : Mon Dec  7 18:11:13 2020
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: I1/B_SIG_reg[8]
+              (rising edge-triggered flip-flop clocked by MY_CLK)
+  Endpoint: I2/REG_sig_in/Q_reg[23]
+            (rising edge-triggered flip-flop clocked by MY_CLK)
+  Path Group: MY_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  FPmul              5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  I1/B_SIG_reg[8]/CK (DFF_X1)                             0.00       0.00 r
+  I1/B_SIG_reg[8]/Q (DFF_X1)                              0.09       0.09 f
+  I1/B_SIG[8] (FPmul_stage1)                              0.00       0.09 f
+  I2/B_SIG[8] (FPmul_stage2)                              0.00       0.09 f
+  I2/Mul/B[8] (MBE)                                       0.00       0.09 f
+  I2/Mul/PP/B[8] (PPgen)                                  0.00       0.09 f
+  I2/Mul/PP/qj_gen_4/b2 (QjGen_13)                        0.00       0.09 f
+  I2/Mul/PP/qj_gen_4/MuxSelSignal/IN2 (MuxSel_13)         0.00       0.09 f
+  I2/Mul/PP/qj_gen_4/MuxSelSignal/U3/Z (XOR2_X1)          0.08       0.17 f
+  I2/Mul/PP/qj_gen_4/MuxSelSignal/U2/ZN (NOR2_X1)         0.05       0.22 r
+  I2/Mul/PP/qj_gen_4/MuxSelSignal/Q[1] (MuxSel_13)        0.00       0.22 r
+  I2/Mul/PP/qj_gen_4/Mux/SEL[1] (Mux4to1_13)              0.00       0.22 r
+  I2/Mul/PP/qj_gen_4/Mux/U8/ZN (INV_X1)                   0.03       0.25 f
+  I2/Mul/PP/qj_gen_4/Mux/U4/ZN (AND2_X4)                  0.06       0.31 f
+  I2/Mul/PP/qj_gen_4/Mux/U2/Z (BUF_X1)                    0.06       0.37 f
+  I2/Mul/PP/qj_gen_4/Mux/U93/ZN (AOI22_X1)                0.06       0.43 r
+  I2/Mul/PP/qj_gen_4/Mux/U94/ZN (NAND2_X1)                0.03       0.46 f
+  I2/Mul/PP/qj_gen_4/Mux/Q[22] (Mux4to1_13)               0.00       0.46 f
+  I2/Mul/PP/qj_gen_4/Qj[22] (QjGen_13)                    0.00       0.46 f
+  I2/Mul/PP/U36/ZN (XNOR2_X1)                             0.06       0.52 f
+  I2/Mul/PP/P4[24] (PPgen)                                0.00       0.52 f
+  I2/Mul/D/PP4[24] (Dadda)                                0.00       0.52 f
+  I2/Mul/D/FA6_11_30/in2 (FA_476)                         0.00       0.52 f
+  I2/Mul/D/FA6_11_30/U1/Z (BUF_X1)                        0.04       0.56 f
+  I2/Mul/D/FA6_11_30/U4/ZN (XNOR2_X1)                     0.06       0.62 f
+  I2/Mul/D/FA6_11_30/sum (FA_476)                         0.00       0.62 f
+  I2/Mul/D/FA5_2c_30/in2 (FA_398)                         0.00       0.62 f
+  I2/Mul/D/FA5_2c_30/U2/ZN (XNOR2_X1)                     0.06       0.68 f
+  I2/Mul/D/FA5_2c_30/U1/ZN (XNOR2_X1)                     0.06       0.74 f
+  I2/Mul/D/FA5_2c_30/sum (FA_398)                         0.00       0.74 f
+  I2/Mul/D/FA4_2c_30/carry_in (FA_285)                    0.00       0.74 f
+  I2/Mul/D/FA4_2c_30/U4/ZN (OAI21_X1)                     0.04       0.78 r
+  I2/Mul/D/FA4_2c_30/U2/ZN (NAND2_X1)                     0.03       0.82 f
+  I2/Mul/D/FA4_2c_30/carry_out (FA_285)                   0.00       0.82 f
+  I2/Mul/D/FA3_1c_31/in2 (FA_172)                         0.00       0.82 f
+  I2/Mul/D/FA3_1c_31/U5/ZN (OAI21_X1)                     0.04       0.85 r
+  I2/Mul/D/FA3_1c_31/U6/ZN (OAI21_X1)                     0.04       0.89 f
+  I2/Mul/D/FA3_1c_31/carry_out (FA_172)                   0.00       0.89 f
+  I2/Mul/D/FA2_c_32/in1 (FA_91)                           0.00       0.89 f
+  I2/Mul/D/FA2_c_32/U1/Z (BUF_X1)                         0.04       0.93 f
+  I2/Mul/D/FA2_c_32/U7/ZN (OAI21_X1)                      0.05       0.98 r
+  I2/Mul/D/FA2_c_32/U8/ZN (OAI21_X1)                      0.04       1.02 f
+  I2/Mul/D/FA2_c_32/carry_out (FA_91)                     0.00       1.02 f
+  I2/Mul/D/FA1_c_33/in1 (FA_31)                           0.00       1.02 f
+  I2/Mul/D/FA1_c_33/U6/ZN (XNOR2_X1)                      0.06       1.07 f
+  I2/Mul/D/FA1_c_33/U5/ZN (XNOR2_X1)                      0.06       1.13 f
+  I2/Mul/D/FA1_c_33/sum (FA_31)                           0.00       1.13 f
+  I2/Mul/D/OP2[33] (Dadda)                                0.00       1.13 f
+  I2/Mul/add_122/B[33] (MBE_DW01_add_5)                   0.00       1.13 f
+  I2/Mul/add_122/U668/ZN (AND2_X1)                        0.04       1.18 f
+  I2/Mul/add_122/U667/ZN (AOI21_X1)                       0.05       1.23 r
+  I2/Mul/add_122/U664/ZN (OAI21_X1)                       0.03       1.27 f
+  I2/Mul/add_122/U637/ZN (AOI21_X1)                       0.06       1.33 r
+  I2/Mul/add_122/U636/ZN (OAI21_X1)                       0.04       1.37 f
+  I2/Mul/add_122/U600/ZN (AOI21_X1)                       0.08       1.45 r
+  I2/Mul/add_122/U645/ZN (OAI21_X1)                       0.04       1.49 f
+  I2/Mul/add_122/U644/ZN (XNOR2_X1)                       0.06       1.54 f
+  I2/Mul/add_122/SUM[43] (MBE_DW01_add_5)                 0.00       1.54 f
+  I2/Mul/P[43] (MBE)                                      0.00       1.54 f
+  I2/REG_sig_in/D[23] (regn_N28)                          0.00       1.54 f
+  I2/REG_sig_in/Q_reg[23]/D (DFF_X1)                      0.01       1.55 f
+  data arrival time                                                  1.55
+
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                      -0.07      -0.07
+  I2/REG_sig_in/Q_reg[23]/CK (DFF_X1)                     0.00      -0.07 r
+  library setup time                                     -0.04      -0.11
+  data required time                                                -0.11
+  --------------------------------------------------------------------------
+  data required time                                                -0.11
+  data arrival time                                                 -1.55
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -1.66
+
+
+1

@@ -1,0 +1,68 @@
+Information: Updating design information... (UID-85)
+Warning: There are infeasible paths detected in your design that were ignored during optimization. Please run 'report_timing -attributes' and/or 'create_qor_snapshot/query_qor_snapshot -infeasible_paths' to identify these paths.  (OPT-1721)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : FPmul
+Version: O-2018.06-SP4
+Date   : Mon Dec  7 16:41:11 2020
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: FP_B[30] (input port clocked by MY_CLK)
+  Endpoint: I2/Mul/PP/qj_gen_11/Mux/MY_CLK_r_REG490_S1
+            (rising edge-triggered flip-flop clocked by MY_CLK)
+  Path Group: MY_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  FPmul              5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.50       0.50 f
+  FP_B[30] (in)                                           0.00       0.50 f
+  REG2/D[30] (regn_N32_1)                                 0.00       0.50 f
+  REG2/Q[30] (regn_N32_1)                                 0.00       0.50 f
+  I1/FP_B[30] (FPmul_stage1)                              0.00       0.50 f
+  I1/I1/FP[30] (UnpackFP_1)                               0.00       0.50 f
+  I1/I1/U21/ZN (NOR4_X1)                                  0.09       0.59 r
+  I1/I1/U23/ZN (NAND2_X1)                                 0.05       0.64 f
+  I1/I1/SIG[23] (UnpackFP_1)                              0.00       0.64 f
+  I1/B_SIG[23] (FPmul_stage1)                             0.00       0.64 f
+  I2/B_SIG[23] (FPmul_stage2)                             0.00       0.64 f
+  I2/Mul/B[23] (MBE)                                      0.00       0.64 f
+  I2/Mul/PP/B[23] (PPgen)                                 0.00       0.64 f
+  I2/Mul/PP/qj_gen_11/b2p1 (QjGen_6)                      0.00       0.64 f
+  I2/Mul/PP/qj_gen_11/MuxSelSignal/IN2p1 (MuxSel_6)       0.00       0.64 f
+  I2/Mul/PP/qj_gen_11/MuxSelSignal/U4/ZN (XNOR2_X1)       0.07       0.71 f
+  I2/Mul/PP/qj_gen_11/MuxSelSignal/U2/ZN (NOR2_X1)        0.04       0.75 r
+  I2/Mul/PP/qj_gen_11/MuxSelSignal/Q[1] (MuxSel_6)        0.00       0.75 r
+  I2/Mul/PP/qj_gen_11/Mux/SEL[1] (Mux4to1_6)              0.00       0.75 r
+  I2/Mul/PP/qj_gen_11/Mux/MY_CLK_r_REG490_S1/D (DFF_X1)
+                                                          0.01       0.76 r
+  data arrival time                                                  0.76
+
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                      -0.07      -0.07
+  I2/Mul/PP/qj_gen_11/Mux/MY_CLK_r_REG490_S1/CK (DFF_X1)
+                                                          0.00      -0.07 r
+  library setup time                                     -0.03      -0.10
+  data required time                                                -0.10
+  --------------------------------------------------------------------------
+  data required time                                                -0.10
+  data arrival time                                                 -0.76
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.86
+
+
+1
